@@ -3,9 +3,10 @@
 
 const CONFIG = {
     // API Configuration
+    // For production, set API_URL in Vercel environment variables
     API_URL: window.location.hostname === 'localhost' 
         ? 'http://localhost:8004'  // Local development
-        : 'https://ottoproject-image-ascii-api-xxxxx.a.run.app', // Production (replace with actual URL)
+        : (window.ENV?.API_URL || 'https://ottoproject-image-ascii-api-rirafu7rda-an.a.run.app'), // Production - fallback to actual URL
     
     // API Key (for authenticated endpoints)
     // In production, this should be empty for public access

@@ -4,7 +4,8 @@
   "description": "ASCII Art Converter - Convert images to ASCII art",
   "scripts": {
     "dev": "python3 -m http.server 8000",
-    "build": "echo 'No build required for static site'"
+    "build": "node scripts/build-env.js",
+    "vercel-build": "node scripts/build-env.js"
   },
   "keywords": ["ascii", "art", "converter", "image"],
   "author": "",

@@ -25,13 +25,17 @@ http://localhost:8000
 
 ## API Configuration
 
-Edit `config.js` to set the API endpoint:
+### Local Development
+API automatically connects to `http://localhost:8004`
 
-```javascript
-API_URL: window.location.hostname === 'localhost' 
-    ? 'http://localhost:8004'
-    : 'https://your-api-url.com'
-```
+### Production (Vercel)
+Set the `API_URL` environment variable in Vercel:
+
+1. Go to Vercel Dashboard > Project Settings > Environment Variables
+2. Add variable:
+   - Name: `API_URL`
+   - Value: `https://your-api-url.a.run.app`
+3. Redeploy for changes to take effect
 
 ## Deployment
 
@@ -46,6 +50,16 @@ vercel
 
 # Deploy to production
 vercel --prod
+```
+
+#### Setting Environment Variables
+
+```bash
+# Via CLI
+vercel env add API_URL
+
+# Or via Dashboard
+# Project Settings > Environment Variables
 ```
 
 ## Technologies
