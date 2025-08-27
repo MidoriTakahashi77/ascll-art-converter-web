@@ -1,0 +1,12 @@
+{
+  "name": "ascii-converter",
+  "version": "1.0.0",
+  "description": "ASCII Art Converter - Convert images to ASCII art",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build required for static site'"
+  },
+  "keywords": ["ascii", "art", "converter", "image"],
+  "author": "",
+  "license": "MIT"
+}

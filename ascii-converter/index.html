@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Converter - OttoProject</title>
+    <meta name="description" content="Convert images to ASCII art instantly. Upload photos or use sample images to create unique ASCII art.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 ASCII Art Converter</h1>
+            <p class="subtitle">Transform your images into ASCII art</p>
+        </header>
+        
+        <main>
+            <div class="panels">
+                <section class="panel input-panel">
+                    <h2>Input Settings</h2>
+                    
+                    <div class="api-status" id="apiStatus">
+                        <span class="status-indicator" id="statusIndicator"></span>
+                        <span id="statusText">Checking API...</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageFile">Select Image</label>
+                        <input type="file" id="imageFile" accept="image/*" class="file-input">
+                        <label for="imageFile" class="file-label">Choose file...</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageUrl">Or Enter Image URL</label>
+                        <div class="url-input-group">
+                            <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" class="url-input">
+                            <button id="loadUrlBtn" class="url-load-btn">Load</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Quick Examples</label>
+                        <div class="sample-buttons">
+                            <button class="sample-btn" data-sample="gradient">Gradient</button>
+                            <button class="sample-btn" data-sample="circle">Circle</button>
+                            <button class="sample-btn" data-sample="photo">Photo</button>
+                            <button class="sample-btn" data-sample="logo">Logo</button>
+                            <button class="sample-btn" data-sample="text">Text</button>
+                            <button class="sample-btn" data-sample="pattern">Pattern</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="width">Width (characters)</label>
+                        <input type="range" id="width" min="20" max="200" value="80">
+                        <span class="range-value" id="widthValue">80</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="charset">Character Set</label>
+                        <select id="charset">
+                            <option value="ascii">ASCII ( .:-=+*#%@)</option>
+                            <option value="blocks">Blocks (░▒▓█)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Options</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" id="invert">
+                                <span>Invert colors</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="colored">
+                                <span>Colored output (ANSI)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="brightness">Brightness</label>
+                        <input type="range" id="brightness" min="-100" max="100" value="0">
+                        <span class="range-value" id="brightnessValue">0</span>
+                    </div>
+                    
+                    <button class="convert-btn" id="convertBtn">Convert to ASCII</button>
+                    
+                    <div id="preview" class="preview-container"></div>
+                </section>
+                
+                <section class="panel output-panel">
+                    <h2>ASCII Output</h2>
+                    
+                    <div class="output-controls">
+                        <button class="copy-btn" id="copyBtn">📋 Copy</button>
+                        <button class="download-btn" id="downloadBtn">💾 Download</button>
+                    </div>
+                    
+                    <pre id="asciiOutput" class="ascii-output">ASCII art will appear here...</pre>
+                    
+                    <div id="metadata" class="metadata"></div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Part of <a href="https://github.com/yourusername/ottoproject" target="_blank">OttoProject</a></p>
+            <p class="api-info">Powered by OttoProject Image ASCII API</p>
+        </footer>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
